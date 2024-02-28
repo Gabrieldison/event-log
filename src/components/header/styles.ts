@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   margin-bottom: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgb(0, 0, 0, 5%);
+  border-bottom: 1px solid var(--divider);
 `;
 
 export const NavContainer = styled.nav`
@@ -22,6 +22,6 @@ export const NavContainer = styled.nav`
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    color: #828583;
+    color: var(--link);
   }
 `;
