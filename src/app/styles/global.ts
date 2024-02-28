@@ -1,4 +1,5 @@
 "use client";
+
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -6,11 +7,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
   }
 
   body {
-    background-color: #0B0A0A;
+    background-color: #E6E8EB;
     -webkit-font-smoothing: antialiased;
   }
 
