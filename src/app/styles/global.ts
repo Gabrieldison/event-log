@@ -1,5 +1,5 @@
 "use client";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,10 +17,8 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
     font-size: 1rem;
-    padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
+    padding: 0.5rem 1rem;
   }
 `;
 
 export default GlobalStyle;
-
-export const MainContainer = styled.main``;
