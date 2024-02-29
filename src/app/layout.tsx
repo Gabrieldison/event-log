@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Raleway } from "next/font/google";
 import StyledComponentsRegistry from "./lib/registry";
 import GlobalStyle from "./styles/global";
 
-const poppins = Poppins({
-  subsets: ["devanagari", "latin", "latin-ext"],
+const poppins = Raleway({
+  subsets: ["latin", "latin-ext"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 

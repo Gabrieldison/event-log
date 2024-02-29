@@ -1,4 +1,5 @@
 import { Button } from "@/components/button";
+import Link from "next/link";
 import { Actions, Container, DateText, Description, Title } from "./styles";
 
 export default function Home() {
@@ -40,9 +41,13 @@ export default function Home() {
       </Description>
 
       <Actions>
-        <Button>Inscreva-se!</Button>
+        <Link href="/subscription">
+          <Button>Inscreva-se!</Button>
+        </Link>
 
-        <Button>Faça sua submissão</Button>
+        <Link href="/submission">
+          <Button>Faça sua submissão</Button>
+        </Link>
       </Actions>
     </Container>
   );
