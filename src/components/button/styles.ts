@@ -10,12 +10,9 @@ export const ButtonContainer = styled.button`
   font-size: 1rem;
   font-weight: 600;
   padding: 8px 16px;
-  text-transform: capitalize;
   transition: filter 0.3s ease;
 
   &:hover {
     filter: brightness(0.9);
   }
 `;
-
-// background: linear-gradient(180deg, #6afba4, #1fbe5f);
