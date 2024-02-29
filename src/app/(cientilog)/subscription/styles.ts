@@ -9,8 +9,8 @@ export const MaxContainer = styled.main`
   justify-content: center;
 `;
 
-export const MinContainer = styled.div`
-  h1 {
-    margin-bottom: 20px;
-  }
+export const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 `;

@@ -1,9 +1,13 @@
+"use client";
+
 import logo from "@/../public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HeaderContainer, NavContainer } from "./styles";
 
 export function Header() {
+  const pathname = usePathname();
   return (
     <HeaderContainer>
       <div>
@@ -12,10 +16,27 @@ export function Header() {
         </Link>
       </div>
       <NavContainer>
-        <Link href="/">Eventos</Link>
-        <Link href="/subscription">Inscrições</Link>
-        <Link href="/submission">Submissões</Link>
-        <Link href="/dashboard">DashBoard</Link>
+        <Link href="/" className={`${pathname === "/" ? "active" : ""}`}>
+          Eventos
+        </Link>
+        <Link
+          href="/subscription"
+          className={`${pathname === "/subscription" ? "active" : ""}`}
+        >
+          Inscrições
+        </Link>
+        <Link
+          href="/submission"
+          className={`${pathname === "/submission" ? "active" : ""}`}
+        >
+          Submissões
+        </Link>
+        <Link
+          href="/dashboard"
+          className={`${pathname === "/dashboard" ? "active" : ""}`}
+        >
+          DashBoard
+        </Link>
       </NavContainer>
     </HeaderContainer>
   );

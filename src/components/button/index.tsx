@@ -1,6 +1,11 @@
 import { ReactNode } from "react";
 import { ButtonContainer } from "./styles";
 
-export function Button({ children }: { children: ReactNode }) {
-  return <ButtonContainer>{children}</ButtonContainer>;
+interface ButtonProps {
+  children: ReactNode;
+  type?: "button" | "submit" | "reset";
+}
+
+export function Button({ children, type = "button" }: ButtonProps) {
+  return <ButtonContainer type={type}>{children}</ButtonContainer>;
 }

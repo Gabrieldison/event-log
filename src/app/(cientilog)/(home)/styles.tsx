@@ -18,9 +18,10 @@ export const Title = styled.h1`
 
 export const DateText = styled.span`
   color: var(--non-relevant-text);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 20px;
+  font-style: italic;
 `;
 
 export const Description = styled.div`
@@ -29,8 +30,9 @@ export const Description = styled.div`
   gap: 20px;
 
   p {
-    line-height: 190%;
+    line-height: 180%;
     font-size: 1rem;
+    font-weight: 400;
   }
 `;
 

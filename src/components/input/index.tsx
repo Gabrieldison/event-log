@@ -1,5 +1,11 @@
 import { ChangeEvent } from "react";
-import { InputWrapper, Label, StyledInput, StyledTextarea } from "./styles";
+import {
+  ErrorMessage,
+  InputWrapper,
+  Label,
+  StyledInput,
+  StyledTextarea,
+} from "./styles";
 
 interface InputProps {
   label?: string;
@@ -8,7 +14,8 @@ interface InputProps {
   name: string;
   textarea?: boolean;
   fileInput?: boolean;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  error?: string; //
+  onChange: (e: ChangeEvent) => void;
 }
 
 export function Input({
@@ -18,6 +25,7 @@ export function Input({
   textarea,
   fileInput,
   name,
+  error,
   onChange,
 }: InputProps) {
   return (
@@ -27,29 +35,26 @@ export function Input({
         <StyledTextarea
           id={name}
           placeholder={placeholder}
+          maxLength={255}
           value={value}
-          onChange={onChange as (e: ChangeEvent<HTMLTextAreaElement>) => void}
+          onChange={onChange}
           name={name}
         />
       ) : fileInput ? (
-        <>
-          <StyledInput
-            type="file"
-            id={name}
-            onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
-            name={name}
-          />
-        </>
+        <StyledInput type="file" id={name} onChange={onChange} name={name} />
       ) : (
         <StyledInput
+          maxLength={50}
           type="text"
           id={name}
           placeholder={placeholder}
           value={value}
-          onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
+          onChange={onChange}
           name={name}
         />
       )}
+
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputWrapper>
   );
 }

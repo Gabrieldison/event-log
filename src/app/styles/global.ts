@@ -5,12 +5,14 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
   :root {
-      --primary-green: #2dec79; 
-      --background: #E6E8EB;
-      --title: #050505;
-      --text: #323332;
-      --link: #828583;
-      --non-relevant-text: #A4A6A4;
+      --background: #E4F3EC;
+      --title: #0F1811;
+      --text: #535755;
+      --link: #59615D;
+      --non-relevant-text: #9D9E9D;
+      --primary-green: #07FF8B;
+      --black-green: #072D1B;
+      --border: #c0e2ce;
       --divider: rgb(0, 0, 0, 5%);
     }
 
