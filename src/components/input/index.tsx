@@ -6,7 +6,8 @@ interface InputProps {
   placeholder?: string;
   value: string;
   name: string;
-  textarea?: string;
+  textarea?: boolean;
+  fileInput?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
@@ -15,6 +16,7 @@ export function Input({
   placeholder,
   value,
   textarea,
+  fileInput,
   name,
   onChange,
 }: InputProps) {
@@ -29,6 +31,15 @@ export function Input({
           onChange={onChange as (e: ChangeEvent<HTMLTextAreaElement>) => void}
           name={name}
         />
+      ) : fileInput ? (
+        <>
+          <StyledInput
+            type="file"
+            id={name}
+            onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
+            name={name}
+          />
+        </>
       ) : (
         <StyledInput
           type="text"

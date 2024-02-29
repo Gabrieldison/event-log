@@ -19,9 +19,30 @@ export const NavContainer = styled.nav`
   gap: 10px;
 
   a {
+    position: relative;
+    overflow: hidden;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     color: var(--link);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-green);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: var(--title);
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import { FormEvent, ReactNode } from "react";
+import { FormContainer } from "./styles";
 
 interface FormProps {
   onSubmit: (e: FormEvent) => void;
@@ -6,5 +7,5 @@ interface FormProps {
 }
 
 export function Form({ onSubmit, children }: FormProps) {
-  return <form onSubmit={onSubmit}>{children}</form>;
+  return <FormContainer onSubmit={onSubmit}>{children}</FormContainer>;
 }
