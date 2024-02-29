@@ -5,6 +5,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
   :root {
+      --primary-green: #2dec79; 
       --background: #E6E8EB;
       --title: #050505;
       --text: #323332;

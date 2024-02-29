@@ -3,16 +3,22 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
-  background: #39c67a;
-  color: var(--text);
-  border: thin solid var(--non-relevant-text);
+  background: var(--primary-green);
+  color: #063c1f;
+  border: 0;
   border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 600;
   padding: 8px 16px;
-  transition: filter 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+  margin-bottom: 20px;
 
   &:hover {
-    filter: brightness(0.9);
+    background: #1dbf5e;
+    color: #05331a;
   }
 `;
