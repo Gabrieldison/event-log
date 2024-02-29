@@ -13,7 +13,7 @@ export function Header() {
       </div>
       <NavContainer>
         <Link href="/">Eventos</Link>
-        <Link href="/registration">Inscrições</Link>
+        <Link href="/subscription">Inscrições</Link>
         <Link href="/submission">Submissões</Link>
         <Link href="/dashboard">DashBoard</Link>
       </NavContainer>
