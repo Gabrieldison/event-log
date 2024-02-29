@@ -3,8 +3,8 @@ import { Poppins } from "next/font/google";
 import StyledComponentsRegistry from "./lib/registry";
 import GlobalStyle from "./styles/global";
 
-const IBM = Poppins({
-  subsets: ["latin"],
+const poppins = Poppins({
+  subsets: ["devanagari", "latin", "latin-ext"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={IBM.className}>
+      <body className={poppins.className}>
         <StyledComponentsRegistry>
           {children}
           <GlobalStyle />

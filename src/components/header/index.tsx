@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeaderContainer, NavContainer } from "./styles";
 
-export default function Header() {
+export function Header() {
   return (
     <HeaderContainer>
       <div>
