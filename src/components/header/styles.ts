@@ -44,5 +44,13 @@ export const NavContainer = styled.nav`
     &:hover {
       color: var(--title);
     }
+
+    &.active::after {
+      width: 100%;
+    }
+
+    &.active {
+      color: var(--title);
+    }
   }
 `;

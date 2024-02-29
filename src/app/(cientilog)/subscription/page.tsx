@@ -4,6 +4,7 @@ import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { Input } from "@/components/input";
 import { useState } from "react";
+import { Toaster, toast } from "sonner";
 import { MaxContainer, Title } from "./styles";
 
 export default function Subscription() {
@@ -66,6 +67,8 @@ export default function Subscription() {
     }
 
     // Mensagem de toastify com sucesso
+    toast.success("Formulário enviado com sucesso");
+
     console.log("Titulo:", name);
     console.log("Resumo:", email);
     console.log("Upload do Artigo:", affiliation);
@@ -75,6 +78,8 @@ export default function Subscription() {
 
   return (
     <MaxContainer>
+      <Toaster position="top-right" richColors theme="light" duration={3000} />
+
       <Form onSubmit={handleSubmit}>
         <Title>Inscrição</Title>
         <Input
