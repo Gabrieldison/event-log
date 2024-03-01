@@ -3,11 +3,13 @@
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { Input } from "@/components/input";
+import { useDataEventContext } from "@/contexts/DataEventContext";
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
 import { MaxContainer, Title } from "./styles";
 
 export default function Subscription() {
+  const { registerNewSubscriber } = useDataEventContext();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [affiliation, setAffiliation] = useState("");
@@ -66,19 +68,16 @@ export default function Subscription() {
       return;
     }
 
-    // Mensagem de toastify com sucesso
-    toast.success("Formulário enviado com sucesso");
+    registerNewSubscriber({ name, email, affiliation });
 
-    console.log("Titulo:", name);
-    console.log("Resumo:", email);
-    console.log("Upload do Artigo:", affiliation);
+    toast.success("Sua inscrição foi realizada com sucesso");
 
     resetForm();
   };
 
   return (
     <MaxContainer>
-      <Toaster position="top-right" richColors theme="light" duration={3000} />
+      <Toaster position="top-right" richColors theme="light" duration={2000} />
 
       <Form onSubmit={handleSubmit}>
         <Title>Inscrição</Title>

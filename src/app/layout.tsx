@@ -1,3 +1,4 @@
+import { DataEventProvider } from "@/contexts/DataEventContext";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import StyledComponentsRegistry from "./lib/registry";
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <StyledComponentsRegistry>
-          {children}
-          <GlobalStyle />
-        </StyledComponentsRegistry>
+        <DataEventProvider>
+          <StyledComponentsRegistry>
+            {children}
+            <GlobalStyle />
+          </StyledComponentsRegistry>
+        </DataEventProvider>
       </body>
     </html>
   );
