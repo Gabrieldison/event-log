@@ -22,7 +22,6 @@ export const EventProvider = ({ children }: { children: ReactNode }) => {
   const [articles, setArticles] = useState<any[]>([]);
 
   useEffect(() => {
-    // Recuperar dados do localStorage ao montar o componente
     const storedSubscribers = localStorage.getItem("subscribers");
     const storedArticles = localStorage.getItem("articles");
 
@@ -38,14 +37,12 @@ export const EventProvider = ({ children }: { children: ReactNode }) => {
   const registerNewSubscriber = (data: any) => {
     const newSubscribers = [...subscribers, data];
     setSubscribers(newSubscribers);
-    // Atualizar dados no localStorage
     localStorage.setItem("subscribers", JSON.stringify(newSubscribers));
   };
 
   const submitArticle = (data: any) => {
     const newArticles = [...articles, data];
     setArticles(newArticles);
-    // Atualizar dados no localStorage
     localStorage.setItem("articles", JSON.stringify(newArticles));
   };
 

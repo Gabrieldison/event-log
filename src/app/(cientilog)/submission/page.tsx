@@ -68,7 +68,7 @@ export default function Submission() {
 
   return (
     <MaxContainer>
-      <Toaster position="top-right" richColors theme="light" duration={2000} />
+      <Toaster position="top-right" richColors theme="light" duration={1000} />
 
       <Form onSubmit={handleSubmit}>
         <Title>Submissão</Title>

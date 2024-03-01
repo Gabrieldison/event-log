@@ -1,40 +1,68 @@
 "use client";
 
 import { useEventContext } from "@/contexts/event-context";
-import { Container } from "./styles";
+import {
+  Article,
+  ArticlesContainer,
+  AwaitingMessage,
+  Card,
+  CardsContainer,
+  DashboardContainer,
+  Title,
+} from "./styles";
 
 export default function Dashboard() {
   const { subscribers, articles } = useEventContext();
 
   return (
-    <Container>
-      <h1>Painel administrativo</h1>
+    <main>
+      <Title>Painel administrativo</Title>
 
-      <section>
-        <h2>Total de inscritos</h2>
+      <DashboardContainer>
+        <CardsContainer>
+          <Card>
+            <span className="label">Total de inscritos</span>
+            {subscribers.length > 0 ? (
+              <div className="count">
+                <span>+</span>
+                <span>{subscribers.length}</span>
+              </div>
+            ) : (
+              <AwaitingMessage>Nenhum inscrito no momento</AwaitingMessage>
+            )}
+          </Card>
+          <Card>
+            <span className="label">Total de artigos</span>
+            {articles.length > 0 ? (
+              <div className="count">
+                <span>+</span>
+                <span>{articles.length}</span>
+              </div>
+            ) : (
+              <AwaitingMessage>Nenhum artigo submetido</AwaitingMessage>
+            )}
+          </Card>
+        </CardsContainer>
 
-        {subscribers.length > 0 ? (
-          <p>{subscribers.length}</p>
-        ) : (
-          <p>Nenhum inscrito no momento.</p>
-        )}
-      </section>
+        <ArticlesContainer>
+          <h2>Lista de artigos submetidos</h2>
 
-      <section>
-        <h2>Artigos Submetidos</h2>
-        {articles.length > 0 ? (
-          <ul>
-            {articles.map((article, index) => (
-              <li key={index}>
-                Título: {article.title}, Resumo: {article.resume}, Arquivo:{" "}
-                {article.uploadArticle.name}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Nenhum artigo submetido no momento.</p>
-        )}
-      </section>
-    </Container>
+          {articles.length > 0 ? (
+            <ul>
+              {articles.map((article) => (
+                <Article>
+                  <span className="title">{article.title}</span>
+                  <span className="preview">{article.resume}</span>
+                </Article>
+              ))}
+            </ul>
+          ) : (
+            <AwaitingMessage>
+              Nenhum artigo submetido no momento
+            </AwaitingMessage>
+          )}
+        </ArticlesContainer>
+      </DashboardContainer>
+    </main>
   );
 }

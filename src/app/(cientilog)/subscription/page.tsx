@@ -72,7 +72,7 @@ export default function Subscription() {
 
   return (
     <MaxContainer>
-      <Toaster position="top-right" richColors theme="light" duration={2000} />
+      <Toaster position="top-right" richColors theme="light" duration={1000} />
 
       <Form onSubmit={handleSubmit}>
         <Title>Inscrição</Title>
