@@ -35,7 +35,7 @@ export function Input({
         <StyledTextarea
           id={name}
           placeholder={placeholder}
-          maxLength={255}
+          maxLength={300}
           value={value}
           onChange={onChange}
           name={name}

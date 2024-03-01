@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import GlobalStyle from "./globals";
 import StyledComponentsRegistry from "./lib/registry";
-import GlobalStyle from "./styles/global";
 
-const poppins = Raleway({
+const raleway = Raleway({
   subsets: ["latin", "latin-ext"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={raleway.className}>
         <StyledComponentsRegistry>
           {children}
           <GlobalStyle />

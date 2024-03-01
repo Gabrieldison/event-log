@@ -25,6 +25,7 @@ export const NavContainer = styled.nav`
     font-size: 1rem;
     font-weight: 500;
     color: var(--link);
+    padding-bottom: 2px;
 
     &::after {
       content: "";

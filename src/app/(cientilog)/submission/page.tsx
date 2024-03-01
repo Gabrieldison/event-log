@@ -3,11 +3,14 @@
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { Input } from "@/components/input";
+import { useEventContext } from "@/contexts/event-context";
 import { useState } from "react";
 import { toast, Toaster } from "sonner";
 import { MaxContainer, Title } from "./styles";
 
 export default function Submission() {
+  const { submitArticle } = useEventContext();
+
   const [title, setTitle] = useState("");
   const [resume, setResume] = useState("");
   const [uploadArticle, setUploadArticle] = useState("");
@@ -56,18 +59,16 @@ export default function Submission() {
       return;
     }
 
-    toast.success("Formulário enviado com sucesso");
+    submitArticle({ title, resume, uploadArticle });
 
-    console.log("Titulo:", title);
-    console.log("Resumo:", resume);
-    console.log("Upload do Artigo:", uploadArticle);
+    toast.success("Seu artigo foi enviado com sucesso");
 
     resetForm();
   };
 
   return (
     <MaxContainer>
-      <Toaster position="top-right" richColors theme="light" duration={3000} />
+      <Toaster position="top-right" richColors theme="light" duration={1000} />
 
       <Form onSubmit={handleSubmit}>
         <Title>Submissão</Title>
@@ -90,7 +91,7 @@ export default function Submission() {
         />
 
         <Input
-          label="Upload do artigo"
+          label="Envio de arquivo"
           fileInput
           name="upload"
           onChange={handleUploadChange}
