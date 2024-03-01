@@ -3,13 +3,13 @@
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { Input } from "@/components/input";
-import { useDataEventContext } from "@/contexts/DataEventContext";
+import { useEventContext } from "@/contexts/event-context";
 import { useState } from "react";
 import { toast, Toaster } from "sonner";
 import { MaxContainer, Title } from "./styles";
 
 export default function Submission() {
-  const { submitArticle } = useDataEventContext();
+  const { submitArticle } = useEventContext();
 
   const [title, setTitle] = useState("");
   const [resume, setResume] = useState("");

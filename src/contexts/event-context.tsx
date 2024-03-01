@@ -8,18 +8,16 @@ import {
   useState,
 } from "react";
 
-interface DataEventContextProps {
+interface EventContextProps {
   subscribers: any[];
   articles: any[];
   registerNewSubscriber: (data: any) => void;
   submitArticle: (data: any) => void;
 }
 
-const DataEventContext = createContext<DataEventContextProps | undefined>(
-  undefined
-);
+const EventContext = createContext<EventContextProps | undefined>(undefined);
 
-export const DataEventProvider = ({ children }: { children: ReactNode }) => {
+export const EventProvider = ({ children }: { children: ReactNode }) => {
   const [subscribers, setSubscribers] = useState<any[]>([]);
   const [articles, setArticles] = useState<any[]>([]);
 
@@ -51,7 +49,7 @@ export const DataEventProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("articles", JSON.stringify(newArticles));
   };
 
-  const contextValue: DataEventContextProps = {
+  const contextValue: EventContextProps = {
     subscribers,
     articles,
     registerNewSubscriber,
@@ -59,18 +57,16 @@ export const DataEventProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <DataEventContext.Provider value={contextValue}>
+    <EventContext.Provider value={contextValue}>
       {children}
-    </DataEventContext.Provider>
+    </EventContext.Provider>
   );
 };
 
-export const useDataEventContext = () => {
-  const context = useContext(DataEventContext);
+export const useEventContext = () => {
+  const context = useContext(EventContext);
   if (!context) {
-    throw new Error(
-      "useDataEventContext must be used within a DataEventProvider"
-    );
+    throw new Error("useEventContext must be used within a DataEventProvider");
   }
   return context;
 };

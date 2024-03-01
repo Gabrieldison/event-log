@@ -46,7 +46,7 @@ export default function Home() {
         </Link>
 
         <Link href="/submission">
-          <Button>Faça sua submissão</Button>
+          <Button>Envie seu artigo</Button>
         </Link>
       </Actions>
     </Container>

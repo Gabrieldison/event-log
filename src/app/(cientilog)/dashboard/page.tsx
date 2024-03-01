@@ -1,13 +1,14 @@
 "use client";
 
-import { useDataEventContext } from "@/contexts/DataEventContext";
+import { useEventContext } from "@/contexts/event-context";
+import { Container } from "./styles";
 
 export default function Dashboard() {
-  const { subscribers, articles } = useDataEventContext();
+  const { subscribers, articles } = useEventContext();
 
   return (
-    <main>
-      <h1>Dashboard</h1>
+    <Container>
+      <h1>Painel administrativo</h1>
 
       <section>
         <h2>Total de inscritos</h2>
@@ -34,6 +35,6 @@ export default function Dashboard() {
           <p>Nenhum artigo submetido no momento.</p>
         )}
       </section>
-    </main>
+    </Container>
   );
 }

@@ -3,13 +3,14 @@
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { Input } from "@/components/input";
-import { useDataEventContext } from "@/contexts/DataEventContext";
+import { useEventContext } from "@/contexts/event-context";
+import { validateEmail } from "@/utils/validate-email";
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
 import { MaxContainer, Title } from "./styles";
 
 export default function Subscription() {
-  const { registerNewSubscriber } = useDataEventContext();
+  const { registerNewSubscriber } = useEventContext();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [affiliation, setAffiliation] = useState("");
@@ -22,12 +23,6 @@ export default function Subscription() {
     setName("");
     setEmail("");
     setAffiliation("");
-  };
-
-  const validateEmail = (email: string) => {
-    const re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
   };
 
   const handleNameChange = (event: any) => {
