@@ -79,8 +79,8 @@ export const Article = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
 
   & .title {
     font-size: 1.2rem;
