@@ -6,17 +6,18 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import {
+  CloseButtonMenuMobile,
   HeaderContainer,
-  MobileMenu,
-  MobileMenuButton,
+  MobileMenuIcon,
   NavContainer,
 } from "./styles";
+
+import { IoMdClose } from "react-icons/io";
 
 export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const pathname = usePathname();
-
   const router = useRouter();
 
   const toggleMenu = () => {
@@ -38,33 +39,10 @@ export function Header() {
         <Image src={logo} alt="logo image" />
       </Link>
 
-      <NavContainer>
-        <Link href="/" className={`${pathname === "/" ? "active" : ""}`}>
-          Eventos
-        </Link>
-        <Link
-          href="/subscription"
-          className={`${pathname === "/subscription" ? "active" : ""}`}
-        >
-          Inscrições
-        </Link>
-        <Link
-          href="/submission"
-          className={`${pathname === "/submission" ? "active" : ""}`}
-        >
-          Submissões
-        </Link>
-        <Link
-          href="/dashboard"
-          className={`${pathname === "/dashboard" ? "active" : ""}`}
-        >
-          Painel
-        </Link>
-      </NavContainer>
-
-      <MobileMenuButton onClick={toggleMenu}>Menu</MobileMenuButton>
-
-      <MobileMenu isOpen={isMenuOpen}>
+      <NavContainer isOpen={isMenuOpen}>
+        <CloseButtonMenuMobile onClick={closeMenu}>
+          <IoMdClose />
+        </CloseButtonMenuMobile>
         <Link
           href="/"
           className={`${pathname === "/" ? "active" : ""}`}
@@ -93,7 +71,9 @@ export function Header() {
         >
           Painel
         </Link>
-      </MobileMenu>
+      </NavContainer>
+
+      <MobileMenuIcon onClick={toggleMenu}>Menu</MobileMenuIcon>
     </HeaderContainer>
   );
 }

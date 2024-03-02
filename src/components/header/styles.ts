@@ -18,13 +18,13 @@ export const HeaderContainer = styled.header`
   border-bottom: 1px solid var(--divider);
 `;
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.nav<MobileMenuProps>`
   display: flex;
+  align-items: center;
   gap: 0.625rem;
-
-  @media (max-width: 520px) {
-    display: none;
-  }
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 
   a {
     position: relative;
@@ -59,10 +59,32 @@ export const NavContainer = styled.nav`
     &.active {
       color: var(--title);
     }
+
+    @media (max-width: 520px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 0.625rem;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background);
+    opacity: ${(props) => (props.isOpen ? "1" : "0")};
+    transform: translateX(${(props) => (props.isOpen ? "0" : "100%")});
   }
 `;
 
-export const MobileMenuButton = styled.button`
+export const MobileMenuIcon = styled.div`
   display: none;
   cursor: pointer;
 
@@ -74,44 +96,15 @@ export const MobileMenuButton = styled.button`
   }
 `;
 
-export const MobileMenu = styled.div<MobileMenuProps>`
+export const CloseButtonMenuMobile = styled.span`
   display: none;
-  gap: 0.625rem;
-  padding: 1rem;
-  width: 100%;
 
   @media (max-width: 520px) {
     display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-    font-size: 1rem;
+    align-self: flex-end;
     font-weight: 500;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    transition:
-      transform 0.3s ease,
-      visibility 0.3s ease;
-
-    transform: translateX(${({ isOpen }) => (isOpen ? "0" : "100%")});
-
-    visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
-
-    a {
-      /* display: flex;
-      align-items: center;
-      justify-content: center; */
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--link);
-    }
-
-    a.active {
-      background-color: var(--divider);
-      color: var(--title);
-      padding: 0.313rem;
-      border-radius: 3px;
-    }
+    font-size: 1.5rem;
+    color: var(--black-green);
+    cursor: pointer;
   }
 `;
