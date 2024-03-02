@@ -17,6 +17,7 @@ export const Label = styled.label`
 export const StyledInput = styled.input`
   width: 100%;
   padding: 10px 12px;
+  font-size: 1rem;
   border: 1px solid var(--border);
   border-radius: 3px;
   background-color: var(--background);
@@ -35,7 +36,8 @@ export const StyledInput = styled.input`
 
 export const StyledTextarea = styled.textarea`
   width: 100%;
-  min-height: 250px;
+  min-height: 150px;
+  font-size: 1rem;
   color: var(--text);
   background-color: var(--background);
   border-radius: 4px;

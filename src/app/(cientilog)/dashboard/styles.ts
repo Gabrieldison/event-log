@@ -8,6 +8,7 @@ export const Title = styled.h1`
 `;
 
 export const DashboardContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +22,10 @@ export const CardsContainer = styled.section`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
 `;
 
 export const Card = styled.div`
@@ -48,6 +53,10 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 `;
 
 export const ArticlesContainer = styled.section`
@@ -56,6 +65,7 @@ export const ArticlesContainer = styled.section`
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
+  margin-bottom: 20px;
 
   h2 {
     font-size: 1.5rem;
@@ -64,16 +74,19 @@ export const ArticlesContainer = styled.section`
 `;
 
 export const Article = styled.li`
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 
   & .title {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--black-green);
+    word-break: break-all;
   }
 
   & .preview {
@@ -84,6 +97,11 @@ export const Article = styled.li`
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 40%; /* Ajuste conforme necessário */
+
+    @media (max-width: 1024px) {
+      display: none;
+      width: 100%;
+    }
   }
 `;
 

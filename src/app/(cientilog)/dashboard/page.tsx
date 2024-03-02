@@ -45,7 +45,7 @@ export default function Dashboard() {
         </CardsContainer>
 
         <ArticlesContainer>
-          <h2>Lista de artigos submetidos</h2>
+          <h2>Lista de artigos</h2>
 
           {articles.length > 0 ? (
             <ul>

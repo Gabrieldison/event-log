@@ -39,7 +39,14 @@ export const Description = styled.div`
 export const Actions = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @media (max-width: 375px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0;
+  }
 `;

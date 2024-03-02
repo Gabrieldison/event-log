@@ -103,7 +103,7 @@ export const CloseButtonMenuMobile = styled.span`
     display: flex;
     align-self: flex-end;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--black-green);
     cursor: pointer;
   }

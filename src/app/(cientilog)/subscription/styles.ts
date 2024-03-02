@@ -12,5 +12,5 @@ export const MaxContainer = styled.main`
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 `;

@@ -16,7 +16,7 @@ export const ButtonContainer = styled.button`
     transform 0.3s,
     color 0.3s;
 
-  margin-bottom: 15px;
+  margin-bottom: 0.938rem;
 
   &:hover {
     transform: scale(1.05);
