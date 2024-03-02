@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 180%;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 87.5%;
+    }
   }
 
   body {
@@ -27,8 +32,16 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--link);
+  }
+
   button {
     cursor: pointer;
+    border: 0;  
+    background: transparent;
   }
 `;
 
