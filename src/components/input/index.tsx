@@ -1,23 +1,21 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react'
 import {
   ErrorMessage,
   InputWrapper,
   Label,
   StyledInput,
   StyledTextarea,
-} from "./styles";
+} from './styles'
 
 interface InputProps {
-  label?: string;
-  placeholder?: string;
-  value: string;
-  name: string;
-  textarea?: boolean;
-  fileInput?: boolean;
-  error?: string;
-  onChange: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  label?: string
+  placeholder?: string
+  value: string
+  name: string
+  textarea?: boolean
+  fileInput?: boolean
+  error?: string
+  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
 export function Input({
@@ -58,5 +56,5 @@ export function Input({
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputWrapper>
-  );
+  )
 }

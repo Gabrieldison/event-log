@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ButtonContainer = styled.button`
   background: var(--primary-green);
@@ -22,4 +22,4 @@ export const ButtonContainer = styled.button`
     width: 100%;
     font-size: 1rem;
   }
-`;
+`

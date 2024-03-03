@@ -1,6 +1,6 @@
-import { Button } from "@/components/button";
-import Link from "next/link";
-import { Actions, Container, DateText, Description } from "./styles";
+import { Button } from '@/components/button'
+import Link from 'next/link'
+import { Actions, Container, DateText, Description } from './styles'
 
 export default function Home() {
   return (
@@ -50,5 +50,5 @@ export default function Home() {
         </Link>
       </Actions>
     </Container>
-  );
+  )
 }

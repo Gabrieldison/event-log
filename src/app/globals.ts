@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -56,6 +56,6 @@ const GlobalStyle = createGlobalStyle`
     border: 0;  
     background: transparent;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

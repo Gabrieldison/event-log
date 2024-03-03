@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const DateText = styled.span`
   color: var(--non-relevant-text);
@@ -14,7 +14,7 @@ export const DateText = styled.span`
   font-weight: 400;
   font-style: italic;
   margin-bottom: 1.25rem;
-`;
+`
 
 export const Description = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const Description = styled.div`
       font-size: 1.5rem;
     }
   }
-`;
+`
 
 export const Actions = styled.div`
   display: flex;
@@ -46,4 +46,4 @@ export const Actions = styled.div`
       width: 100%;
     }
   }
-`;
+`

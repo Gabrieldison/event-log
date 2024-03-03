@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.main`
   display: flex;
@@ -8,8 +8,8 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-`;
+`
 
 export const Title = styled.h1`
   margin-bottom: 1.25rem;
-`;
+`

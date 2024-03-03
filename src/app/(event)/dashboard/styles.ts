@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Container = styled.div``;
+export const Container = styled.div``
 
 export const Title = styled.h1`
   margin-bottom: 1.25rem;
-`;
+`
 
 export const CardsContainer = styled.section`
   width: 100%;
@@ -18,7 +18,7 @@ export const CardsContainer = styled.section`
   @media (max-width: 520px) {
     flex-direction: column;
   }
-`;
+`
 
 export const Card = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ export const Card = styled.div`
     font-weight: 800;
     color: var(--black-green);
   }
-`;
+`
 
 export const ArticlesContainer = styled.section`
   background-color: var(--background);
@@ -54,7 +54,7 @@ export const ArticlesContainer = styled.section`
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
   }
-`;
+`
 
 export const Article = styled.li`
   display: flex;
@@ -85,10 +85,10 @@ export const Article = styled.li`
       width: 100%;
     }
   }
-`;
+`
 
 export const AwaitingMessage = styled.span`
   font-size: 1rem;
   font-weight: 600;
   color: var(--non-relevant-text);
-`;
+`

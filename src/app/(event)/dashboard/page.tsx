@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { useEventContext } from "@/contexts/event-context";
+import { useEventContext } from '@/contexts/event-context'
 import {
   Article,
   ArticlesContainer,
@@ -9,10 +9,10 @@ import {
   CardsContainer,
   Container,
   Title,
-} from "./styles";
+} from './styles'
 
 export default function Dashboard() {
-  const { subscribers, articles } = useEventContext();
+  const { subscribers, articles } = useEventContext()
 
   return (
     <Container>
@@ -56,5 +56,5 @@ export default function Dashboard() {
         )}
       </ArticlesContainer>
     </Container>
-  );
+  )
 }

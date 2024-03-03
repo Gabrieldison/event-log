@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const FormContainer = styled.form`
   max-width: 60%;
@@ -14,4 +14,4 @@ export const FormContainer = styled.form`
   @media (max-width: 425px) {
     max-width: 100%;
   }
-`;
+`

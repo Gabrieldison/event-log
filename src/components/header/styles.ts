@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface MobileMenuProps {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 export const HeaderContainer = styled.header`
@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header`
   @media (max-width: 768px) {
     padding: 0.313rem;
   }
-`;
+`
 
 export const NavContainer = styled.nav<MobileMenuProps>`
   display: flex;
@@ -36,7 +36,7 @@ export const NavContainer = styled.nav<MobileMenuProps>`
     color: var(--link);
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 0;
@@ -78,10 +78,10 @@ export const NavContainer = styled.nav<MobileMenuProps>`
     top: 0;
     left: 0;
     background-color: var(--background);
-    opacity: ${(props) => (props.isOpen ? "1" : "0")};
-    transform: translateX(${(props) => (props.isOpen ? "0" : "100%")});
+    opacity: ${(props) => (props.isOpen ? '1' : '0')};
+    transform: translateX(${(props) => (props.isOpen ? '0' : '100%')});
   }
-`;
+`
 
 export const MobileMenuIcon = styled.div`
   display: none;
@@ -92,7 +92,7 @@ export const MobileMenuIcon = styled.div`
     font-weight: 500;
     color: var(--link);
   }
-`;
+`
 
 export const CloseButtonMenuMobile = styled.span`
   display: none;
@@ -104,4 +104,4 @@ export const CloseButtonMenuMobile = styled.span`
     font-size: 2rem;
     color: var(--black-green);
   }
-`;
+`

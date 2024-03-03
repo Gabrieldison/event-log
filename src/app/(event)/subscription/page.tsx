@@ -1,75 +1,75 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/button";
-import { Form } from "@/components/form";
-import { Input } from "@/components/input";
-import { useEventContext } from "@/contexts/event-context";
-import { validateEmail } from "@/utils/validate-email";
-import { useState } from "react";
-import { Toaster, toast } from "sonner";
-import { Container, Title } from "./styles";
+import { Button } from '@/components/button'
+import { Form } from '@/components/form'
+import { Input } from '@/components/input'
+import { useEventContext } from '@/contexts/event-context'
+import { validateEmail } from '@/utils/validate-email'
+import { useState } from 'react'
+import { Toaster, toast } from 'sonner'
+import { Container, Title } from './styles'
 
 export default function Subscription() {
-  const { registerNewSubscriber } = useEventContext();
+  const { registerNewSubscriber } = useEventContext()
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [affiliation, setAffiliation] = useState("");
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [affiliation, setAffiliation] = useState('')
 
-  const [erroName, setErrorName] = useState("");
-  const [erroEmail, setErrorEmail] = useState("");
-  const [erroAffiliation, setErrorAffiliation] = useState("");
+  const [erroName, setErrorName] = useState('')
+  const [erroEmail, setErrorEmail] = useState('')
+  const [erroAffiliation, setErrorAffiliation] = useState('')
 
   const resetForm = () => {
-    setName("");
-    setEmail("");
-    setAffiliation("");
-  };
+    setName('')
+    setEmail('')
+    setAffiliation('')
+  }
 
   const handleNameChange = (event: any) => {
-    setName(event.target.value);
-    setErrorName("");
-  };
+    setName(event.target.value)
+    setErrorName('')
+  }
 
   const handleEmailChange = (event: any) => {
-    setEmail(event.target.value);
-    setErrorEmail("");
-  };
+    setEmail(event.target.value)
+    setErrorEmail('')
+  }
 
   const handleAffiliationChange = (event: any) => {
-    setAffiliation(event.target.value);
-    setErrorAffiliation("");
-  };
+    setAffiliation(event.target.value)
+    setErrorAffiliation('')
+  }
 
   const handleSubmit = (event: any) => {
-    event.preventDefault();
+    event.preventDefault()
 
     if (!name.trim()) {
-      setErrorName("O nome é obrigatorio");
-      return;
+      setErrorName('O nome é obrigatorio')
+      return
     }
 
     if (!email.trim()) {
-      setErrorEmail("O email é obrigatorio");
-      return;
+      setErrorEmail('O email é obrigatorio')
+      return
     }
 
     if (!validateEmail(email)) {
-      setErrorEmail("Este email não é valido, verifique seus dados");
-      return;
+      setErrorEmail('Este email não é valido, verifique seus dados')
+      return
     }
 
     if (!affiliation.trim()) {
-      setErrorAffiliation("A afiliação é obrigatoria");
-      return;
+      setErrorAffiliation('A afiliação é obrigatoria')
+      return
     }
 
-    registerNewSubscriber({ name, email, affiliation });
+    registerNewSubscriber({ name, email, affiliation })
 
-    toast.success("Sua inscrição foi realizada com sucesso");
+    toast.success('Sua inscrição foi realizada com sucesso')
 
-    resetForm();
-  };
+    resetForm()
+  }
 
   return (
     <Container>
@@ -107,5 +107,5 @@ export default function Subscription() {
         <Button type="submit">Inscrever-se</Button>
       </Form>
     </Container>
-  );
+  )
 }

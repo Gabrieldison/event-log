@@ -1,37 +1,37 @@
-"use client";
+'use client'
 
-import logo from "@/../public/images/logo.svg";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import logo from '@/../public/images/logo.svg'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import { useState } from 'react'
 import {
   CloseButtonMenuMobile,
   HeaderContainer,
   MobileMenuIcon,
   NavContainer,
-} from "./styles";
+} from './styles'
 
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose } from 'react-icons/io'
 
 export function Header() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false)
 
-  const pathname = usePathname();
-  const router = useRouter();
+  const pathname = usePathname()
+  const router = useRouter()
 
   const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+    setMenuOpen(!isMenuOpen)
+  }
 
   const closeMenu = () => {
-    setMenuOpen(false);
-  };
+    setMenuOpen(false)
+  }
 
   const handleLinkClick = (href: string) => {
-    router.push(href);
-    closeMenu();
-  };
+    router.push(href)
+    closeMenu()
+  }
 
   return (
     <HeaderContainer>
@@ -45,29 +45,29 @@ export function Header() {
         </CloseButtonMenuMobile>
         <Link
           href="/"
-          className={`${pathname === "/" ? "active" : ""}`}
-          onClick={() => handleLinkClick("/")}
+          className={`${pathname === '/' ? 'active' : ''}`}
+          onClick={() => handleLinkClick('/')}
         >
           Eventos
         </Link>
         <Link
           href="/subscription"
-          className={`${pathname === "/subscription" ? "active" : ""}`}
-          onClick={() => handleLinkClick("/subscription")}
+          className={`${pathname === '/subscription' ? 'active' : ''}`}
+          onClick={() => handleLinkClick('/subscription')}
         >
           Inscrições
         </Link>
         <Link
           href="/submission"
-          className={`${pathname === "/submission" ? "active" : ""}`}
-          onClick={() => handleLinkClick("/submission")}
+          className={`${pathname === '/submission' ? 'active' : ''}`}
+          onClick={() => handleLinkClick('/submission')}
         >
           Submissões
         </Link>
         <Link
           href="/dashboard"
-          className={`${pathname === "/dashboard" ? "active" : ""}`}
-          onClick={() => handleLinkClick("/dashboard")}
+          className={`${pathname === '/dashboard' ? 'active' : ''}`}
+          onClick={() => handleLinkClick('/dashboard')}
         >
           Painel
         </Link>
@@ -75,5 +75,5 @@ export function Header() {
 
       <MobileMenuIcon onClick={toggleMenu}>Menu</MobileMenuIcon>
     </HeaderContainer>
-  );
+  )
 }
