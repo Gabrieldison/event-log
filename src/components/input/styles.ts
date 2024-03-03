@@ -5,20 +5,20 @@ import styled from "styled-components";
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 `;
 
 export const Label = styled.label`
-  margin-bottom: 5px;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.313rem;
 `;
 
 export const StyledInput = styled.input`
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
+  padding: 0.625rem;
+  font-size: 1rem;
   border-radius: 3px;
+  border: 1px solid var(--border);
   background-color: var(--background);
   color: var(--text);
 
@@ -28,19 +28,20 @@ export const StyledInput = styled.input`
 
   &::placeholder {
     color: var(--non-relevant-text);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 400;
   }
 `;
 
 export const StyledTextarea = styled.textarea`
   width: 100%;
-  min-height: 250px;
-  color: var(--text);
+  min-height: 100px;
+  font-size: 1rem;
   background-color: var(--background);
-  border-radius: 4px;
+  color: var(--text);
   border: 1px solid var(--border);
-  padding: 8px;
+  border-radius: 4px;
+  padding: 0.625rem;
   font-family: "Raleway", sans-serif;
 
   &:focus {
@@ -49,7 +50,7 @@ export const StyledTextarea = styled.textarea`
 
   &::placeholder {
     color: var(--non-relevant-text);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 400;
   }
 `;
@@ -57,6 +58,6 @@ export const StyledTextarea = styled.textarea`
 export const ErrorMessage = styled.span`
   display: block;
   color: #ff0000;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 1rem;
+  margin-top: 0.313rem;
 `;

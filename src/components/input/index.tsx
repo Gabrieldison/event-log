@@ -14,8 +14,10 @@ interface InputProps {
   name: string;
   textarea?: boolean;
   fileInput?: boolean;
-  error?: string; //
-  onChange: (e: ChangeEvent) => void;
+  error?: string;
+  onChange: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 }
 
 export function Input({

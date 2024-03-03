@@ -8,38 +8,42 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.h1`
-  width: 100%;
-  color: var(--title);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-`;
-
 export const DateText = styled.span`
   color: var(--non-relevant-text);
   font-size: 0.875rem;
   font-weight: 400;
-  margin-bottom: 20px;
   font-style: italic;
+  margin-bottom: 1.25rem;
 `;
 
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 
   p {
-    line-height: 180%;
     font-size: 1rem;
     font-weight: 400;
+
+    @media (max-width: 520px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 
 export const Actions = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    align-items: baseline;
+
+    a {
+      width: 100%;
+    }
+  }
 `;

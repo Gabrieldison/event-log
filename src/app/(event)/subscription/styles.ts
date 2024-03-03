@@ -2,15 +2,14 @@
 
 import styled from "styled-components";
 
-export const MaxContainer = styled.main`
+export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1.25rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 `;

@@ -6,7 +6,7 @@ import { Input } from "@/components/input";
 import { useEventContext } from "@/contexts/event-context";
 import { useState } from "react";
 import { toast, Toaster } from "sonner";
-import { MaxContainer, Title } from "./styles";
+import { Container, Title } from "./styles";
 
 export default function Submission() {
   const { submitArticle } = useEventContext();
@@ -67,7 +67,7 @@ export default function Submission() {
   };
 
   return (
-    <MaxContainer>
+    <Container>
       <Toaster position="top-right" richColors theme="light" duration={1000} />
 
       <Form onSubmit={handleSubmit}>
@@ -76,6 +76,7 @@ export default function Submission() {
         <Input
           label="Titulo"
           name="title"
+          placeholder="Aquecimento global"
           onChange={handleTitleChange}
           value={title}
           error={erroTitle}
@@ -86,6 +87,7 @@ export default function Submission() {
           textarea
           name="resume"
           onChange={handleResumeChange}
+          placeholder="Este artigo se trata sobre o..."
           value={resume}
           error={erroResume}
         />
@@ -101,6 +103,6 @@ export default function Submission() {
 
         <Button type="submit">Enviar</Button>
       </Form>
-    </MaxContainer>
+    </Container>
   );
 }

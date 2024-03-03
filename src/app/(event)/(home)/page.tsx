@@ -1,11 +1,11 @@
 import { Button } from "@/components/button";
 import Link from "next/link";
-import { Actions, Container, DateText, Description, Title } from "./styles";
+import { Actions, Container, DateText, Description } from "./styles";
 
 export default function Home() {
   return (
     <Container>
-      <Title>Conferência Científica: Mudanças Climáticas Globais</Title>
+      <h1>Conferência Científica: Mudanças Climáticas Globais</h1>
 
       <DateText>Riacho de Santana • 20 a 22 de Setembro de 2025</DateText>
 
