@@ -2,26 +2,18 @@
 
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  margin-bottom: 20px;
-  font-size: 2rem;
-`;
+export const Container = styled.div``;
 
-export const DashboardContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const Title = styled.h1`
+  margin-bottom: 1.25rem;
 `;
 
 export const CardsContainer = styled.section`
   width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: stretch;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
 
   @media (max-width: 520px) {
     flex-direction: column;
@@ -29,58 +21,48 @@ export const CardsContainer = styled.section`
 `;
 
 export const Card = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
+  justify-content: center;
   background-color: var(--background);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 10px;
 
   & .label {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 10px;
   }
 
   & .count {
     font-size: 4rem;
     font-weight: 800;
     color: var(--black-green);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: 520px) {
-    width: 100%;
   }
 `;
 
 export const ArticlesContainer = styled.section`
-  width: 100%;
   background-color: var(--background);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
 
   h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 `;
 
 export const Article = styled.li`
-  width: 100%;
-  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   border-bottom: 1px solid var(--border);
+  list-style: none;
+  margin-bottom: 1.25rem;
 
   & .title {
     font-size: 1.2rem;
@@ -96,7 +78,7 @@ export const Article = styled.li`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 40%; /* Ajuste conforme necessário */
+    max-width: 40%;
 
     @media (max-width: 1024px) {
       display: none;

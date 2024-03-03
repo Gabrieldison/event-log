@@ -7,7 +7,7 @@ import {
   AwaitingMessage,
   Card,
   CardsContainer,
-  DashboardContainer,
+  Container,
   Title,
 } from "./styles";
 
@@ -15,54 +15,46 @@ export default function Dashboard() {
   const { subscribers, articles } = useEventContext();
 
   return (
-    <main>
+    <Container>
       <Title>Painel administrativo</Title>
 
-      <DashboardContainer>
-        <CardsContainer>
-          <Card>
-            <span className="label">Total de inscritos</span>
-            {subscribers.length > 0 ? (
-              <div className="count">
-                <span>+</span>
-                <span>{subscribers.length}</span>
-              </div>
-            ) : (
-              <AwaitingMessage>Nenhum inscrito no momento</AwaitingMessage>
-            )}
-          </Card>
-          <Card>
-            <span className="label">Total de artigos</span>
-            {articles.length > 0 ? (
-              <div className="count">
-                <span>+</span>
-                <span>{articles.length}</span>
-              </div>
-            ) : (
-              <AwaitingMessage>Nenhum artigo submetido</AwaitingMessage>
-            )}
-          </Card>
-        </CardsContainer>
+      <CardsContainer>
+        <Card>
+          <span className="label">Total de inscritos</span>
 
-        <ArticlesContainer>
-          <h2>Lista de artigos</h2>
+          {subscribers.length > 0 ? (
+            <span className="count">{subscribers.length}</span>
+          ) : (
+            <AwaitingMessage>Nenhum inscrito no momento</AwaitingMessage>
+          )}
+        </Card>
+        <Card>
+          <span className="label">Total de artigos</span>
 
           {articles.length > 0 ? (
-            <ul>
-              {articles.map((article) => (
-                <Article>
-                  <span className="title">{article.title}</span>
-                  <span className="preview">{article.resume}</span>
-                </Article>
-              ))}
-            </ul>
+            <span className="count">{articles.length}</span>
           ) : (
-            <AwaitingMessage>
-              Nenhum artigo submetido no momento
-            </AwaitingMessage>
+            <AwaitingMessage>Nenhum artigo submetido</AwaitingMessage>
           )}
-        </ArticlesContainer>
-      </DashboardContainer>
-    </main>
+        </Card>
+      </CardsContainer>
+
+      <ArticlesContainer>
+        <h2>Lista de artigos</h2>
+
+        {articles.length > 0 ? (
+          <ul>
+            {articles.map((article) => (
+              <Article>
+                <span className="title">{article.title}</span>
+                <span className="preview">{article.resume}</span>
+              </Article>
+            ))}
+          </ul>
+        ) : (
+          <AwaitingMessage>Nenhum artigo submetido no momento</AwaitingMessage>
+        )}
+      </ArticlesContainer>
+    </Container>
   );
 }

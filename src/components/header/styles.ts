@@ -13,9 +13,12 @@ export const HeaderContainer = styled.header`
   align-items: center;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  padding-top: 0.313rem;
-  padding-bottom: 0.313rem;
+
   border-bottom: 1px solid var(--divider);
+
+  @media (max-width: 768px) {
+    padding: 0.313rem;
+  }
 `;
 
 export const NavContainer = styled.nav<MobileMenuProps>`
@@ -28,7 +31,6 @@ export const NavContainer = styled.nav<MobileMenuProps>`
 
   a {
     position: relative;
-    overflow: hidden;
     font-size: 1rem;
     font-weight: 500;
     color: var(--link);
@@ -52,10 +54,7 @@ export const NavContainer = styled.nav<MobileMenuProps>`
       width: 100%;
     }
 
-    &:hover {
-      color: var(--title);
-    }
-
+    &:hover,
     &.active {
       color: var(--title);
     }
@@ -73,7 +72,7 @@ export const NavContainer = styled.nav<MobileMenuProps>`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap: 0.625rem;
+    gap: 1rem;
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -86,11 +85,10 @@ export const NavContainer = styled.nav<MobileMenuProps>`
 
 export const MobileMenuIcon = styled.div`
   display: none;
-  cursor: pointer;
 
   @media (max-width: 520px) {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--link);
   }
@@ -101,10 +99,9 @@ export const CloseButtonMenuMobile = styled.span`
 
   @media (max-width: 520px) {
     display: flex;
-    align-self: flex-end;
+    align-self: end;
     font-weight: 500;
     font-size: 2rem;
     color: var(--black-green);
-    cursor: pointer;
   }
 `;

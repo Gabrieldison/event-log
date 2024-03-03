@@ -7,10 +7,11 @@ import { useEventContext } from "@/contexts/event-context";
 import { validateEmail } from "@/utils/validate-email";
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
-import { MaxContainer, Title } from "./styles";
+import { Container, Title } from "./styles";
 
 export default function Subscription() {
   const { registerNewSubscriber } = useEventContext();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [affiliation, setAffiliation] = useState("");
@@ -71,7 +72,7 @@ export default function Subscription() {
   };
 
   return (
-    <MaxContainer>
+    <Container>
       <Toaster position="top-right" richColors theme="light" duration={1000} />
 
       <Form onSubmit={handleSubmit}>
@@ -105,6 +106,6 @@ export default function Subscription() {
 
         <Button type="submit">Inscrever-se</Button>
       </Form>
-    </MaxContainer>
+    </Container>
   );
 }
